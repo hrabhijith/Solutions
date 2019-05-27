@@ -1,0 +1,49 @@
+<!-- Uses base.html template as base -->
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Egyptian Fraction{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="container">
+        <br>
+        <button class="btn btn-success" onclick="window.location.href='{{url_for('home')}}';">Soution Home!</button>
+        <br>
+        <br>
+        <form action="" method="POST" class="form-group">
+            <label for="numerator">Enter numerator:
+                <input type="number" name="numerator" class="form-control" id="numerator">
+            </label>
+            <br>
+            <label for="numerator">Enter denominator:
+                <input type="number" name="denominator" class="form-control" id="denominator">
+            </label>
+            <br>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+        <br>
+        <b>Result:</b>
+        {% if list %}
+        <br>
+        <br>
+        {% for i in list %}
+        <b>{{i}}</b>
+        {% endfor %}
+        {% endif %}
+        {% if not list %}
+        <p>No results!</p>
+        {% endif %}
+        {% endblock %}
+    </div>
+
+</body>
+
+</html>

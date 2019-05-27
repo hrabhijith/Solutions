@@ -1,0 +1,32 @@
+<!-- Uses base.html template as base -->
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Home{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="container">
+        <br>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='{{url_for('library')}}';">Problem 1
+            -
+            Library of hashtable</button>
+        <button type="button" class="btn btn-danger" onclick="window.location.href='{{url_for('fraction')}}';">Problem 2
+            -
+            Egyptian Fraction</button>
+        <button type="button" class="btn btn-success"
+            onclick="window.location.href='{{url_for('palindrome')}}';">Problem 3
+            - Sum of Palindromes in both 2 and 10 bases</button>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

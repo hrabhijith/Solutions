@@ -1,0 +1,25 @@
+<!-- Uses base.html template as base -->
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Palindrome{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="container">
+        <br>
+        <br>
+        <h3>Sum of all the palindrome numbers below 1 million in both base 2 and 10 is - </h1>
+        <h5>{{sum}}</h4>
+    </div>
+    {% endblock %}
+</body>
+
+</html>
